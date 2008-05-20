@@ -1,0 +1,14 @@
+inherit gnome2
+
+DESCRIPTION="Pidgin RSA encryption plugin"
+HOMEPAGE="http://pidgin-encrypt.sourceforge.net/"
+SRC_URI="mirror://sourceforge/pidgin-encrypt/${P}.tar.gz"
+
+WANT_AUTOMAKE=1.9
+CYGCONF_ARGS="
+	--disable-static
+	--with-nspr-includes=$(nspr-config --includedir)
+	--with-nspr-libs=$(nspr-config --libdir)
+	--with-nss-includes=$(nss-config --includedir)
+	--with-nss-libs=$(nss-config --libdir)
+"
